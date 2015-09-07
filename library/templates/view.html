@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                ISBN
+            </th>
+        </tr>    
+    </thead>
+    <tbody>
+        {% for each in books: %}
+        <tr onclick="window.document.location='/book/{{each['id']}}';">
+            <td>
+                {{each['title']}}
+            </td>
+            <td>
+                {{each['author']}}
+            </td>
+            <td>
+                {{each['isbn']}}
+            </td>
+        </tr> 
+        {% endfor %}        
+    </tbody>
+</table>
+ 
+{% endblock %}

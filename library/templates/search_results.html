@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% for each in results: %}
+<a href="book/{{each[0]}}"><h4>{{each[2]}}</h4></a>
+<p>IBSN: {{each[3]}}</p>
+<hr>
+{% endfor %}
+{% endblock %}

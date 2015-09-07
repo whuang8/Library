@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+<h2>Title: {{book['title']}}</h2>
+<p>Author: {{book['author']}}</p>
+<p>ISBN #: {{book['isbn']}}</p>
+
+
+<button type="button" class="btn btn-default" onclick="showForm()">Edit Entry</button>
+<button type="submit" class="btn btn-default" onclick="warning()">Delete Entry</button>
+
+
+
+<form role="form" action="" method="POST" id="editform" style="margin-top:20px;">
+		  <div class="form-group">
+		    <label for="title">Title</label>
+		    <input class="form-control" name="title" value="{{book['title']}}" placeholder="{{book['title']}}">
+		  </div>
+          <div class="form-group">
+		    <label for="isbn">ISBN</label>
+		    <input class="form-control" name="isbn" value="{{book['isbn']}}" placeholder="{{book['isbn']}}">
+		  </div>
+          <div class="form-group">
+              <label for="author">Author</label>
+		      <select class="form-control" name="author">
+                  <option value="1">Edgar Allan Poe</option>
+                  <option value="2">Mark Twain</option>
+                  <option value="3">Arthur Conan Doyle</option>
+              </select>
+          </div>
+		  <button type="submit" class="btn btn-default">Submit Changes</button>
+		  <input type="hidden" name="delete" value="no"/>
+		</form>
+
+<script type="text/javascript">
+    document.getElementById("editform").style.display="none";
+    function showForm(){
+        document.getElementById("editform").style.display="block";
+    }
+    
+    function warning(){
+        var x;
+        if (confirm("You are deleting this entry forever. Click continue to confirm.") == true) {
+            x = true;
+        } else {
+            x = false;
+        }
+        if(x){
+            document.getElementById("editform").elements['delete'] = "yes"
+        }
+    }
+</script>
+{% endblock %}

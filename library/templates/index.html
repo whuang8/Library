@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Universal Library</title> 
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+    </head>
+    <body>
+        
+        <div class="pageImage">
+          <img src="http://i1133.photobucket.com/albums/m590/Johnfwills/LibraryBackground.png" alt="">
+        </div>
+        <div class="container">
+            <div class="row text-center" style="margin-top:10%;">
+                <div class="col-lg-12 text-center" style="margin-bottom:20px;"><h1 id="title"><b>Welcome to {{library_name}} Library!</b></h1></div>
+                <div class="col-lg-offset-3 col-lg-6 col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12" style="margin-bottom:20px;">
+                    <form method="POST" action="">
+                        <div class="input-group">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default" type="submit">Search</button>
+                            </span>
+                            <input type="text" name="search" class="form-control" placeholder="Enter a Book Title">
+                        </div>
+                    </form>
+                </div>  
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
+                    <div class="btn-group centered-text" role="group" aria-label="...">
+                        <a href="/add" type="button" class="btn btn-default">Add Book</a>
+                        <a href="/viewlibrary" type="button" class="btn btn-default">View Library</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </body>
+</html>
+

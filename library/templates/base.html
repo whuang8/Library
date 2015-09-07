@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rmotr library</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='bootstrap.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='stylesheet.css') }}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css" type="text/css" />
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800italic|Lato' rel='stylesheet' type='text/css'>
+</head>
+<body>
+<div class="pageImage">
+  <img src="http://i1133.photobucket.com/albums/m590/Johnfwills/LibraryBackground.png" alt="">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-lg-offset-3 col-lg-6  col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6 col-xs-12">
+            <div class="panel panel-default">
+              <div class="panel-heading"><h2>{{title}}</h2></div>
+              <div class="panel-body">{% block content %}{% endblock %}</div>
+            </div>
+            <a href="/" type="button" class="btn btn-default" style="margin-bottom:25px;"><i class="fa fa-home"></i>&nbsp Home</a>
+        </div>
+    </div>
+</div>
+</body>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
+</html>
